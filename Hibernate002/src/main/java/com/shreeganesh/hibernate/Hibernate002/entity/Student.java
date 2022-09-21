@@ -1,6 +1,7 @@
 package com.shreeganesh.hibernate.Hibernate002.entity;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,6 +23,10 @@ public class Student {
 	@Column(name = "Student_number",nullable=false)
 	private long number;
 
+	@Embedded
+	private Address address;
+	
+	
 	public Integer getId() {
 		return id;
 	}
@@ -46,10 +51,20 @@ public class Student {
 		this.number = number;
 	}
 
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", number=" + number + "]";
+		return "Student [id=" + id + ", name=" + name + ", number=" + number + ", address=" + address + "]";
 	}
+
+	
 	
 	
 	
