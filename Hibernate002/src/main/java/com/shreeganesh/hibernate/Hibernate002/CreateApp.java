@@ -15,16 +15,23 @@ public class CreateApp {
 		Session session = sessionFactory.openSession();
 		
 		Transaction transaction = session.getTransaction();
-		Address address = new Address();
-		address.setCity("asd");
-		address.setCountry("asdas");
-		address.setAddressLine1("address 1");
-		address.setAddressLine2("address 2");
+		Address homeAddress = new Address();
+		homeAddress.setCity("Pune");
+		homeAddress.setCountry("India");
+		homeAddress.setAddressLine1("India address 1");
+		homeAddress.setAddressLine2("India address 2");
+		
+		Address hostelAddress = new Address();
+		hostelAddress.setCity("Chennai");
+		hostelAddress.setCountry("India");
+		hostelAddress.setAddressLine1("Chennai address 1");
+		hostelAddress.setAddressLine2("Chennai address 2");
 		
 		Student s = new Student();
-		s.setAddress(address);
-		s.setName("Kfgh");
-		s.setNumber(123456);
+		s.setHomeAddress(homeAddress);
+		s.setHostelAddress(hostelAddress);
+		s.setName("Swapnali");
+		s.setNumber(777777);
 		
 		transaction.begin();
 		session.save(s);
